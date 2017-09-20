@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>灵活的背景地位</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .test01{
+        width: 600px;
+        height: 600px;
+        padding: 10px;
+        background: url(test.jpg) no-repeat #58a;
+        background-position: right 10px bottom 10px;
+        background-origin: content-box;
+    }
+    .test02{
+        width: 600px;
+        height: 600px;
+        padding: 10px;
+        background: url(test.jpg) no-repeat #58a;
+        background-position: calc(100% - 10px) calc(100% - 10px);
+    }
+</style>
+<body>
+    <div class="test01"></div>
+    <div class="test02"></div>
+</body>
+</html>
