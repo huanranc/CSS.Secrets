@@ -58,6 +58,7 @@ background-clip:padding-box     从padding（不含padding）区域向外剪裁�
 
 background-clip:content-box     从content（不含content）区域向外剪裁背景
 
+本次[demo](https://huanranc.github.io/CSS.Secrets/project2-1 "demo")
 
 ###   二、 多重边框   ###
 
@@ -102,4 +103,79 @@ box-shadow还允许用逗号分隔语法，可以创建任意数量的投影。�
 					0 0 0 15px tomato,
 					0 2px 5px 15px rgba(0, 0, 0, .6);
       }
+效果图：![](https://i.imgur.com/UHn1iqb.png)
 
+注意：
+
+- 投影的行为和边框完全不一致，它不会影响布局，而且不会受到box-sizing的影响。不过，你还是可以通过内边距或者外边距（这取决于投影是内嵌还是外扩）来额外模拟出边框所占据的空间。
+
+- box-shadow来模拟边框，它们并不会影响鼠标事件，比如悬停和点击效果。这时候可以给box-shadow加上个inset关键字，来使投影绘制在内圈。所以需要额外的内边距来腾出足够的空隙。
+
+
+#####  outline   #####
+
+复合属性。设置或检索对象外的线条轮廓。outline画在 <' border '> 外面
+outlines相关属性不占据布局空间，不会影响元素的尺寸；
+outlines可能是非矩形；
+不允许类似 <' border '> 属性那样能将自身拆分为 <' border-top '> , <' border-right '> , <' border-bottom '> , <' border-left '>
+对应的脚本特性为outline。
+
+如果是只需要两层边框，可以一层常规边框，一层outline（描边）。
+
+    background: yellowgreen;
+	border: 10px solid #655;
+	outline: 5px solid deeppink;
+
+描边的还有一个属性outline-offset,这个属性允许正值和负值，它用来控制它和元素边缘之间的距离。
+
+    background: yellowgreen;
+	border-radius: 5px;
+	outline: 1px dashed #ffffff;
+	outline-offset: -10px;
+效果图：
+![](https://i.imgur.com/OWzwW2t.png)
+
+
+注意：
+
+- outline不支持逗号分隔属性，因此它只适用于双层边框。
+
+- 边框不一定贴合border-radius属性产生的圆角，因此它的元素是圆角，但是描边还可能是直角。
+
+本次[demo](https://huanranc.github.io/CSS.Secrets/project2-2 "demo")
+
+
+###   三、 灵活的背景地位   ###
+
+####    涉及到知识点：    ###
+
+#####  background-position   #####
+
+background-position它允许我们指定的背景图片距离任意角的偏移量，只要我们在偏移量前指定关键字。
+
+    background: url(test.jpg) no-repeat #58a;
+    background-position: right 10px bottom 10px;
+
+在默认情况下，background-position是相对padding box进行偏移的，但是可以使用background-origin来改变这个情况。它默认值是padding-box，你可以修改为content-box，相对内容框偏移。
+
+     background: url(test.jpg) no-repeat #58a;
+     background-position: right 10px bottom 10px;
+     background-origin: content-box;
+
+![](https://i.imgur.com/tnoA1a7.png)
+
+#####  calc()   #####
+
+首先，我们是想要背景图相对于容器偏移，把背景图片定位到距离底边10px 且
+距离右边20px 的位置，即希望它有一个100% - 20px 的水平偏移量，以及100% - 10px 的垂直
+偏移量。我们就可以同过calc()属性来为background-position设置值。
+
+    background: url(test.jpg) no-repeat #58a;
+    background-position: calc(100% - 10px) calc(100% - 10px);
+
+注意：
+
+请不要忘记在calc() 函数内部的- 和+ 运算符的两侧各加一个空白符，否则会产生解析错误！这个规则如此怪异，是为了向前兼容：未来，在calc() 内部可能会允许使用关键字，而这些关键字可能会包含连字符（即减号）。
+
+
+本次[demo](https://huanranc.github.io/CSS.Secrets/project2-3 "demo")

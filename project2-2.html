@@ -7,28 +7,57 @@
     <title>project2-2</title>
     <style>
 			div {
+				width: 100px;
+        height: 100px;
 				margin: 30px;
 			}
 
       .box-shadow {
-        width: 100px;
-        height: 100px;
         background: yellowgreen;
         box-shadow: 0 0 0 10px #655;
       }
 
 			.box-shadow2 {
-        width: 100px;
-        height: 100px;
         background: yellowgreen;
         box-shadow: 0 0 0 10px #655,
 										0 0 0 15px tomato,
 										0 2px 5px 15px rgba(0, 0, 0, .6);
       }
+
+			.box-shadow3 {
+        background: yellowgreen;
+        box-shadow: 0 0 0 10px #655 inset,
+										0 0 0 15px tomato inset,
+										0 2px 5px 15px rgba(0, 0, 0, .6) inset;
+				padding: 15px;
+      }
+
+			.outline {
+				background: yellowgreen;
+				border: 10px solid #655;
+				outline: 5px solid deeppink;
+			}
+
+			.outline1 {
+				background: yellowgreen;
+				border-radius: 5px;
+				outline: 1px dashed #ffffff;
+				outline-offset: -10px;
+			}
+
+			.outline2 {
+				background: yellowgreen;
+				border-radius: 10px;
+				outline: 5px dashed #655;
+			}
     </style>
 </head>
 <body>
 		<div class="box-shadow"></div>
 		<div class="box-shadow2"></div>
+		<div class="box-shadow3"></div>
+		<div class="outline"></div>
+		<div class="outline1"></div>
+		<div class="outline2"></div
 </body>
 </html>
