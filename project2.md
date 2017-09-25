@@ -179,3 +179,9 @@ background-position它允许我们指定的背景图片距离任意角的偏移�
 
 
 本次[demo](https://huanranc.github.io/CSS.Secrets/project2-3 "demo")
+
+###   三、 灵活的背景地位   ###
+
+####    涉及到知识点：    ###
+
+#####  background-position   #####
