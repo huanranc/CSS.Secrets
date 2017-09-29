@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>project2-6</title>
+</head>
+<style>
+  body {
+    background: gray;
+  }
+
+  div {
+    margin: 30px;
+    width: 200px;
+    height: 200px;
+    float: left;
+  }
+
+  .test01{
+    background:white;
+    background-image: linear-gradient(90deg,
+                        rgba(200,0,0,.5) 50%,transparent 0),
+                      linear-gradient(
+                        rgba(200,0,0,.5) 50%,transparent 0);
+    background-size: 30px 30px;
+  }
+
+  .test02 {
+    background:#58a;
+    background-image: 
+      linear-gradient(white 1px,transparent 0),
+      linear-gradient(90deg,white 1px,transparent 0);
+    background-size: 30px 30px;
+  }
+
+  .test03 {
+    background: #58a;
+    background-image:
+      linear-gradient(white 2px,transparent 0),
+      linear-gradient(90deg,white 2px,transparent 0),
+      linear-gradient(hsla(0,0%,100%,.3) 1px,transparent 0),
+      linear-gradient(90deg,hsla(0,0%,100%,.3) 1px,transparent 0);
+    background-size: 75px 75px,75px 75px,
+                     15px 15px,15px 15px;
+  }
+
+  .test04 {
+    background: #655;
+    background-image: radial-gradient(tan 30%,transparent 0);
+    background-size: 30px 30px;
+  }
+
+  .test05 {
+    background: #655;
+    background-image: radial-gradient(tan 30%,transparent 0),
+                      radial-gradient(tan 30%,transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+  }
+
+  .test06 {
+    background:#eee;
+    background-image: 
+      linear-gradient(45deg,#bbb 25%,transparent 0),
+      linear-gradient(45deg,transparent 75%,#bbb 0);
+    background-size:30px 30px;
+  }
+
+  .test07 {
+    background:#eee;
+    background-image: 
+      linear-gradient(45deg,#bbb 25%,transparent 0),
+      linear-gradient(45deg,transparent 75%,#bbb 0);
+    background-position: 0 0,15px 15px;
+    background-size:30px 30px;
+  }
+
+  .test08 {
+    background:#eee;
+    background-image: 
+      linear-gradient(45deg,#bbb 25%,transparent 0),
+      linear-gradient(45deg,transparent 75%,#bbb 0),
+      linear-gradient(45deg,#bbb 25%,transparent 0),
+      linear-gradient(45deg,transparent 75%,#bbb 0);
+    background-position: 0 0,15px 15px,
+                         15px 15px,30px 30px;
+    background-size:30px 30px;
+  }
+</style>
+<body>
+  <div class="test01"></div>
+  <div class="test02"></div>
+  <div class="test03"></div>
+  <div class="test04"></div>
+  <div class="test05"></div>
+  <div class="test06"></div>
+  <div class="test07"></div>
+  <div class="test08"></div>
+</body>
+</html>
