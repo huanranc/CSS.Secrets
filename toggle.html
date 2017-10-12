@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>toggle</title>
+  <style>
+    * {
+      text-transform: uppercase;
+      font-family: Helvetica;
+      text-align: center;
+    }
+
+    header, nav {
+      width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: left;
+      width: 100%;
+    }
+
+    ul.subnav {
+      height: 0px;
+      overflow: hidden;
+    }
+
+    li.is-expanded ul.subnav{
+      height: 236px;
+    }
+
+    ul.subnav li a {
+      background: #e4e4e4;
+    }
+
+    li a {
+      border-bottom: 1px solid #2e3034;
+      margin: 0;
+      padding: 20px 0;
+      float: left;
+      width: 100%;
+    }
+
+    .l-half {
+      width: 50%;
+      float: left;
+      padding: 20px 0;
+    }
+
+    .grey {
+      background: #2e3034;
+      color: #fff;
+    }
+
+    .light-grey {
+      background: #e4e4e4;
+      color: #2e3034;
+      outline: 1px solid #2e3034;
+    }
+
+    nav {
+      height: 1px;
+      overflow: hidden;
+      width: 100%;
+      outline: 1px solid #2e3034;
+      -webkit-transition: height 1s;
+    }
+
+    nav.is-expanded {
+      height: 235px;
+    }
+
+    nav.is-expanded.is-subnav-expanded {
+      height: 470px;
+    }
+/*
+    @media (min-width:700px) {
+      #logo {
+        width: 200px;
+      }
+      #menu {
+        display: none;
+      }
+      nav,nav.is-expanded {
+        height: 60px;
+        width: 500px;
+        float:right;
+      }
+      ul {
+        width: 25%;
+      }
+      article {
+        float: left;
+      }
+    }*/
+  </style>
+    <!--
+  <script>
+    window.onload=function() {
+      document.getElementById('menu').addEventListener('click',function(){
+        var el =document.getElementById('nav');
+        el.className=el.className+'is-expanded';
+      },false)
+    }
+  </script>
+-->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script>
+  $(document).ready(function(){
+    $('#menu').click(function(){
+      $('nav').toggleClass('is-expanded');
+    })
+    $('.has-subnav a').click(function(){
+      $(this).parent().toggleClass('is-expanded');
+      $('nav').toggleClass('is-subnav-expanded');
+    })
+  });
+</script>
+</head>
+<body>
+  <header>
+    <div id="logo" class="l-half grey">Logo</div>
+    <div id="menu" class="l-half light-grey">Menu</div> 
+  </header>
+  <nav id="nav">
+    <ul>
+      <li class="has-subnav">
+        <a href="#">Home</a>
+        <ul class="subnav">
+          <li><a href="#">sub-nav link</a></li>
+          <li><a href="#">sub-nav link</a></li>
+          <li><a href="#">sub-nav link</a></li>
+          <li><a href="#">sub-nav link</a></li>
+        </ul>
+      </li>
+      <li>
+       <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#">Products</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <article>
+    <h2>Headline</h2>
+      <p>Lorem ipsum ...</p>
+  </article>
+</body>
+</html>
