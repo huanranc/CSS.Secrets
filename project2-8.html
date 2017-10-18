@@ -10,6 +10,9 @@
       margin: 0;
       padding: 0;
     }
+    div {
+      margin: 50px;
+    }
     .envelope {
       width: 220px;
       height: 100px;
@@ -22,9 +25,40 @@
                   transparent 0,transparent 50%)
                   0/5em 5em;
     }
+
+    @keyframes ants { to {
+      background-position: 100%;
+    }}
+
+    .marching-ants {
+      width: 220px;
+      height: 100px;
+      padding: 1em;
+      border:1em solid transparent;
+      background :linear-gradient(white,white) padding-box,
+                  repeating-linear-gradient(-45deg,red 0,red 12.5%,
+                  transparent 0,transparent 25%,
+                  #58a 0,#58a 37.5%,
+                  transparent 0,transparent 50%)
+                  0/5em 5em;
+      animation: ants 12s linear infinite;
+    }
+
+    .footnote {
+      border-top: .2em solid transparent;
+      border-image:  100% 0 0 linear-gradient(90deg,currentColor 4em,transparent 0);
+      padding-top: 1em;
+      color: red;
+      font-size: 23px;
+    }
   </style>
 </head>
 <body>
   <div class="envelope"></div>
+  <div class="marching-ants"></div>
+  <div class="footnote">
+    <sup>1</sup>
+    This is a footnote
+  </div>
 </body>
 </html>
